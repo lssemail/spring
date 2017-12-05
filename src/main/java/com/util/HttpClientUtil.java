@@ -127,10 +127,4 @@ public class HttpClientUtil {
         return resultString;
 
     }
-
-    public static void main(String[] args) {
-
-        String result = doGet("http://www.baidu.com", null);
-        System.out.print(result);
-    }
 }
