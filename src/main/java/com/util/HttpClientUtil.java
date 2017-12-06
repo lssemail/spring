@@ -60,7 +60,7 @@ public class HttpClientUtil {
         return resultString;
     }
 
-    private String doGet(String url){
+    public static String doGet(String url){
 
         return doGet(url, null);
     }
