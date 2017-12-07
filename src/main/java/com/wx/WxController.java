@@ -4,9 +4,9 @@ import com.alibaba.fastjson.JSONObject;
 import com.thoughtworks.xstream.XStream;
 import com.util.*;
 import com.wx.config.WxConfig;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,6 +23,9 @@ import java.util.Date;
 @Controller
 @RequestMapping("/wx")
 public class WxController {
+
+    @Autowired
+    WxCustomservice wxCustomservice;
 
     /**
      *
@@ -210,6 +213,14 @@ public class WxController {
             response.getWriter().write(xs.toXML(outputMsg));
 
         }
+    }
+
+    @RequestMapping(value = "/kefu/add", method = RequestMethod.GET)
+    @ResponseBody
+    public String addKefu(){
+
+        String result = wxCustomservice.add();
+        return result;
     }
 
 }

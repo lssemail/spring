@@ -13,7 +13,7 @@ public class WxConfig {
 
     private static final String APPSECRET = "74d11dd648d4d9739cd1811724a9f341";
 
-    public static final String GLOBEL_ACCESS_TOKEN = "N7pZ3LWG1K4cKL5QuPIVAHAanmZirgPHMRnNMmtXDpUP4SzGW-CXzTE_1nIlqt--2YpK0hhOWTzuIUY_U2Trp_hognjYZuWeDwkmMLLCiDN-Jgqy9XQh7oaYkNzpQZIFOAFhADAXJO";
+    public static final String GLOBEL_ACCESS_TOKEN = "MGi0qrHQPI8BjT0KxlxJw0nJVDwlgeP2sd-tcb0ab9QErOWfkkH2LY3iDRoOsCoAbY4eNKBZwmuQFdhSf9j86F8kLIG_A7yGXV2HQbtJvgzbbHN0FinIjk1JmXTAGk-QABOcAGAJKX";
 
     /** 获取 access_token的url
      * https请求方式: GET
@@ -34,4 +34,11 @@ public class WxConfig {
             "?access_token=ACCESS_TOKEN&openid=OPENID&lang=zh_CN";
 
     public static final String URL_TEMPLATE_MSG = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=ACCESS_TOKEN";
+
+
+    /**
+     *
+     */
+    public static final String URL_KF_ADD = "https://api.weixin.qq.com/customservice/kfaccount/add?access_token=ACCESS_TOKEN";
+
 }
