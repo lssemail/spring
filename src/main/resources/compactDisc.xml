@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="compactDisc"
+          class="com.springaction.part01.soundsystem.BlankDisc">
+        <constructor-arg value="this is title"/>
+        <constructor-arg value="this is artist"/>
+        <constructor-arg ref="trackList"/>
+    </bean>
+
+    <util:list id="trackList">
+        <value>track1</value>
+        <value>track2</value>
+        <value>track3</value>
+        <value>track4</value>
+        <value>track5</value>
+        <value>track6</value>
+    </util:list>
+
+    <util:constant static-field="com.springaction.part01.soundsystem.Constant.SITE" id="site"/>
+    <util:properties id="globel" location="classpath:globel.properties"/>
+
+    <bean class="com.springaction.part01.soundsystem.TrackCounter"/>
+</beans>
