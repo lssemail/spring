@@ -9,11 +9,11 @@ public class WxConfig {
 
     private static final String URL_WX_BASE = "https://api.weixin.qq.com";
 
-    private static final String APP_ID = "wx54dc749391cc123b";
+    private static final String APP_ID = "wx";
 
-    private static final String APPSECRET = "74d11dd648d4d9739cd1811724a9f341";
+    private static final String APPSECRET = "wx";
 
-    public static final String GLOBEL_ACCESS_TOKEN = "MGi0qrHQPI8BjT0KxlxJw0nJVDwlgeP2sd-tcb0ab9QErOWfkkH2LY3iDRoOsCoAbY4eNKBZwmuQFdhSf9j86F8kLIG_A7yGXV2HQbtJvgzbbHN0FinIjk1JmXTAGk-QABOcAGAJKX";
+    public static final String GLOBEL_ACCESS_TOKEN = "wx";
 
     /** 获取 access_token的url
      * https请求方式: GET
