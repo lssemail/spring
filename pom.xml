@@ -199,14 +199,6 @@
             <version>2.10.4</version>
         </dependency>
 
-        <!--mq start-->
-        <dependency>
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-all</artifactId>
-            <version>5.15.2</version>
-        </dependency>
-        <!--mq end-->
-
     </dependencies>
 
     <build>
