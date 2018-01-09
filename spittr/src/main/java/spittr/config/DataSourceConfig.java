@@ -1,21 +1,25 @@
 package spittr.config;
 
 import org.apache.commons.dbcp.BasicDataSource;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.*;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.jndi.JndiObjectFactoryBean;
+import org.springframework.transaction.support.TransactionTemplate;
+import spittr.transaction.TransactionAspect;
 
+import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 /**
  * Created by lssemail on 2018/1/6.
  */
 @Configuration
+@EnableAspectJAutoProxy
+@ImportResource("classpath:transaction.xml")
 public class DataSourceConfig {
 
 //    @Profile("development")
@@ -59,4 +63,27 @@ public class DataSourceConfig {
 
         return new JdbcTemplate(dataSource);
     }
+
+    @Bean
+    public DataSourceTransactionManager manager(DataSource dataSource){
+
+        DataSourceTransactionManager manager = new DataSourceTransactionManager(dataSource);
+        return manager;
+    }
+
+    @Bean
+    public TransactionTemplate transactionTemplate(){
+
+        TransactionTemplate template = new TransactionTemplate(manager(qaData()));
+
+        return template;
+    }
+
+    @Bean
+    public TransactionAspect transactionAspect(){
+
+        return new TransactionAspect();
+    }
+
+
 }

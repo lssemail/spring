@@ -4,6 +4,7 @@
     <title>Title</title>
 </head>
 <body>
-    spitter home page
+
+    myServlet page
 </body>
 </html>

@@ -15,7 +15,7 @@ public class MyFilterInitializer implements WebApplicationInitializer{
     public void onStartup(ServletContext servletContext) throws ServletException {
 
         FilterRegistration.Dynamic filter = servletContext.addFilter("myFilter", MyFilter.class);
-        filter.addMappingForUrlPatterns(null, Boolean.FALSE, "/custom/**");
+        filter.addMappingForUrlPatterns(null, Boolean.FALSE, "/*");
 
     }
 }

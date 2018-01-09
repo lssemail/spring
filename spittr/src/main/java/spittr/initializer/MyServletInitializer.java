@@ -16,7 +16,7 @@ public class MyServletInitializer implements WebApplicationInitializer{
 
         ServletRegistration.Dynamic myServlet =
                 servletContext.addServlet("myServlet", MyServlet.class);
-        myServlet.addMapping("/custom1/**");
+        myServlet.addMapping("/myServlet/*");
 
 
     }

@@ -4,6 +4,6 @@
     <title>Title</title>
 </head>
 <body>
-    spitter home page
+transfer page
 </body>
 </html>
